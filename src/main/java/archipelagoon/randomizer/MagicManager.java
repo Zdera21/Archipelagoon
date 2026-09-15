@@ -141,10 +141,10 @@ public class MagicManager {
 
   public void checkUnlock(final CharacterData2c charData) {
     final APContext ctx = APContext.getContext();
-    for(int i = 0; i < charData.dlevel_13; i++) {
+    for(int i = 1; i <= charData.dlevel_13; i++) {
       final Long apId = DragoonLevels.getLocationId(charData.template.getRegistryId(), i);
       if(apId == null || apId == -1L) {
-        return;
+        continue;
       }
 
       ctx.checkLocation(apId);
