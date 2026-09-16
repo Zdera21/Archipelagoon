@@ -18,6 +18,7 @@ import archipelagoon.icons.APIconUiType;
 import archipelagoon.randomizer.AdditionManager;
 import archipelagoon.randomizer.MagicManager;
 import archipelagoon.randomizer.ShopManager;
+import archipelagoon.randomizer.StoryFlagManager;
 import legend.core.GameEngine;
 import legend.core.lang.I18nText;
 import legend.game.combat.BattleTransitionMode;
@@ -390,27 +391,6 @@ public class Archipelagoon {
 
     final APContext ctx = APContext.getContext();
     ctx.renderMessage();
-  }
-
-  @EventListener
-  public void readScriptFlags(final ReadGlobalFlagsEvent event) {
-    if(event.flagArray == ScriptFlagArrayEnum.FLAGS2) {
-      switch(event.getFlagIndex()) {
-        case 59:
-          event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.LIFE_WATER.getId()));
-        case 58:
-          event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.WATER_BOTTLE.getId()));
-        case 9:
-          event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.PRISON_KEY.getId()));
-        case 203:
-          event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.BOAT_LICENSE.getId()));
-      }
-    } else if(event.flagArray == ScriptFlagArrayEnum.FLAGS1) {
-      switch(event.getFlagIndex()) {
-        case 1:
-          event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.AXE_FROM_THE_SHACK.getId()));
-      }
-    }
   }
 
 /* Example of giving the player an ice trap item impersonating healing breeze
