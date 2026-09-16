@@ -402,6 +402,8 @@ public class Archipelagoon {
           event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.WATER_BOTTLE.getId()));
         case 9:
           event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.PRISON_KEY.getId()));
+        case 203:
+          event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.BOAT_LICENSE.getId()));
       }
     } else if(event.flagArray == ScriptFlagArrayEnum.FLAGS1) {
       switch(event.getFlagIndex()) {
