@@ -5,7 +5,6 @@ import legend.game.modding.events.scripting.ReadGlobalFlagsEvent;
 import legend.game.modding.events.submap.SubmapWarpEvent;
 import legend.game.scripting.ScriptFlagArrayEnum;
 import legend.lodmod.LodGoods;
-import org.legendofdragoon.modloader.events.EventListener;
 
 import static legend.game.Scus94491BpeSegment_800b.gameState_800babc8;
 
@@ -28,14 +27,12 @@ public final class StoryFlagManager {
     return current_submap;
   }
 
-  @EventListener
-  public void submapListener(final SubmapWarpEvent event){
+  public static void submapListener(final SubmapWarpEvent event){
     current_submap = event.submapCut;
     System.out.println("Current Submap is: " + current_submap);
   }
 
-  @EventListener
-  public void readScriptFlags(final ReadGlobalFlagsEvent event) {
+  public static void readScriptFlags(final ReadGlobalFlagsEvent event) {
     if(event.flagArray == ScriptFlagArrayEnum.FLAGS2) {
       switch(event.getFlagIndex()) {
         case 59:
