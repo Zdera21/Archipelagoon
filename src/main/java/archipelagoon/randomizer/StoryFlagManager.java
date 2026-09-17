@@ -35,27 +35,29 @@ public final class StoryFlagManager {
   public static void readScriptFlags(final ReadGlobalFlagsEvent event) {
     if(event.flagArray == ScriptFlagArrayEnum.FLAGS2) {
       switch(event.getFlagIndex()) {
-        case 11:
+        case 11, 16:
           //Forest Merchant
           if (current_submap == 624){
             event.flagValue = false;
           }
-        case 16:
-          //Forest Merchant
-          if (current_submap == 624){
-            event.flagValue = false;
-          }
+          break;
         case 59:
           //Nest of Dragon plant
-          event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.LIFE_WATER.getId()));
+          if (current_submap == 132) {
+            event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.LIFE_WATER.getId()));
+          }
           break;
         case 58:
           //Nest of Dragon life water puddle
-          event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.WATER_BOTTLE.getId()));
+          if (current_submap == 133) {
+            event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.WATER_BOTTLE.getId()));
+          }
           break;
         case 9:
           //Hellena Shana's prison tower
-          event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.PRISON_KEY.getId()));
+          if (current_submap == 20) {
+            event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.PRISON_KEY.getId()));
+          }
           break;
         case 203:
           event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.BOAT_LICENSE.getId()));
@@ -64,7 +66,10 @@ public final class StoryFlagManager {
     } else if(event.flagArray == ScriptFlagArrayEnum.FLAGS1) {
       switch(event.getFlagIndex()) {
         case 1:
-          event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.AXE_FROM_THE_SHACK.getId()));
+          //Prairie Tree with axe
+          if (current_submap == 42){
+            event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.AXE_FROM_THE_SHACK.getId()));
+          }
           break;
       }
     }
