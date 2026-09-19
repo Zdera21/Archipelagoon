@@ -1,5 +1,6 @@
 package archipelagoon.randomizer;
 
+import archipelagoon.data.enums.StoryFlags;
 import legend.core.GameEngine;
 import legend.game.modding.events.scripting.ReadGlobalFlagsEvent;
 import legend.game.modding.events.submap.SubmapWarpEvent;
@@ -37,33 +38,34 @@ public final class StoryFlagManager {
   public static void readScriptFlags(final ReadGlobalFlagsEvent event) {
     if(event.flagArray == ScriptFlagArrayEnum.FLAGS2) {
       switch(event.getFlagIndex()) {
-        case 11, 16:
+        case StoryFlags.FOREST_MERCHANT_1, StoryFlags.FOREST_MERCHANT_2:
           if (current_submap == Submaps.FOREST_MERCHANT){
             event.flagValue = false;
           }
           break;
-        case 59:
+        case StoryFlags.NEST_OF_DRAGON_PLANT:
           if (current_submap == Submaps.NEST_OF_DRAGON_PLANT) {
             event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.LIFE_WATER.getId()));
           }
           break;
-        case 58:
+        case StoryFlags.NEST_OF_DRAGON_LIFE_WATER:
           if (current_submap == Submaps.NEST_OF_DRAGON_LIFE_WATER) {
             event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.WATER_BOTTLE.getId()));
           }
           break;
-        case 9:
+        case StoryFlags.HELLENA_SHANA_DOOR:
           if (current_submap == Submaps.HELLENA_ELEVATOR) {
             event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.PRISON_KEY.getId()));
           }
           break;
-        case 203:
+        case StoryFlags.FURNI_BOAT:
+          //TODO: GET SUBMAP VALUE FOR BOAT LICENSE
           event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.BOAT_LICENSE.getId()));
           break;
       }
     } else if(event.flagArray == ScriptFlagArrayEnum.FLAGS1) {
       switch(event.getFlagIndex()) {
-        case 1:
+        case StoryFlags.PRAIRIE_CLIFF_TREE:
           if (current_submap == Submaps.PRAIRIE_CLIFF_TREE){
             event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.AXE_FROM_THE_SHACK.getId()));
           }
