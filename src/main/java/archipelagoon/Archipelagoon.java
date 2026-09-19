@@ -393,7 +393,7 @@ public class Archipelagoon {
   }
 
   @EventListener
-  public void submapListener(final SubmapWarpEvent event){
+  public void submapWarpListener(final SubmapWarpEvent event){
     StoryFlagManager.submapWarpListener(event);
   }
 
