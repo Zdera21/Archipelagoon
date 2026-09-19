@@ -43,38 +43,16 @@ public final class AdditionManager {
     final APContext ctx = APContext.getContext();
 
     switch(AdditionRandomizerType.values()[ctx.getSlotData().additionRandomizer]) {
-      case AdditionRandomizerType.ADDITIONSANITY:
-        this.setAdditionsanity(gameState);
+      case AdditionRandomizerType.SHUFFLED:
+        this.setShuffled(gameState);
         break;
       case AdditionRandomizerType.PROGRESSIVE:
         this.setProgressive(gameState);
         break;
-      case AdditionRandomizerType.OFF:
-      default:
-        this.setVanilla(gameState);
-        break;
     }
   }
 
-  private void setVanilla(final GameState52c gameState) {
-    final GameState52c state = this.resolveState(gameState);
-
-    for(int charIndex = 0; charIndex < 9; charIndex++) {
-
-      final CharacterData2c charData = state.charData_32c.get(charIndex);
-      charData.getAllAdditions().forEach(addition -> {
-        final CharacterAdditionInfo additionInfo = charData.getAdditionInfo(addition);
-
-        if(additionInfo.checkUnlockCriteria(charData)) {
-          additionInfo.setUnlockState(UnlockState.UNLOCKED, -1);
-        } else {
-          additionInfo.setUnlockState(UnlockState.UNLOCKABLE, -1);
-        }
-      });
-    }
-  }
-
-  private void setAdditionsanity(final GameState52c gameState) {
+  private void setShuffled(final GameState52c gameState) {
     final Map<Long, String> additionList = Additions.getStaticMap();
     final GameState52c state = this.resolveState(gameState);
     final APContext ctx = APContext.getContext();
@@ -108,8 +86,10 @@ public final class AdditionManager {
 
         final RegistryId registryId = additions.get(i);
 
-        // we want to enable what we've received.
-        charData.getAdditionInfo(registryId).setUnlockState(UnlockState.UNLOCKED, state.timestamp_a0);
+        final CharacterAdditionInfo additionInfo = charData.getAdditionInfo(registryId);
+        if(additionInfo.getUnlockState() != UnlockState.UNLOCKED) {
+          additionInfo.setUnlockState(UnlockState.UNLOCKED, state.timestamp_a0);
+        }
       }
     }
   }

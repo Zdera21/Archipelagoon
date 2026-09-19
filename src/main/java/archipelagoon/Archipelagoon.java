@@ -13,7 +13,6 @@ import archipelagoon.config.XpMultiplierConfigEntry;
 import archipelagoon.data.APInventoryEntry;
 import archipelagoon.data.APShopExtension;
 import archipelagoon.data.SlotData;
-import archipelagoon.data.enums.AdditionRandomizerType;
 import archipelagoon.icons.APIconUiType;
 import archipelagoon.randomizer.AdditionManager;
 import archipelagoon.randomizer.MagicManager;
@@ -185,9 +184,6 @@ public class Archipelagoon {
   @EventListener
   public void additionUnlock(final AdditionUnlockEvent event) {
     final APContext ctx = APContext.getContext();
-    if(AdditionRandomizerType.values()[ctx.getSlotData().additionRandomizer] == AdditionRandomizerType.OFF) {
-      return;
-    }
 
     if(!Additions.getStaticMap().containsValue(event.addition.getRegistryId().toString())) {
       return;

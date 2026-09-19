@@ -2,6 +2,6 @@ package archipelagoon.data.enums;
 
 public enum AdditionRandomizerType {
   OFF,
-  ADDITIONSANITY,
+  SHUFFLED,
   PROGRESSIVE,
 }

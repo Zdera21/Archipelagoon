@@ -31,8 +31,12 @@ public class APInventoryEntry implements InventoryEntry<APInventoryEntry> {
   public ItemIcon getIcon() {
     if((this.flags & NetworkItem.ADVANCEMENT) != 0) {
       return APIcon.PRIORITY;
+    } else if((this.flags & NetworkItem.USEFUL) != 0) {
+      return APIcon.USEFUL;
+    } else if((this.flags & NetworkItem.TRAP) != 0) {
+      return APIcon.PRIORITY; // trap icon can be determined later
     } else {
-      return APIcon.OTHER;
+      return APIcon.FILLER;
     }
   }
 
