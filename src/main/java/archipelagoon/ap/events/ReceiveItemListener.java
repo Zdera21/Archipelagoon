@@ -8,13 +8,18 @@ import io.github.archipelagomw.events.ArchipelagoEventListener;
 import io.github.archipelagomw.events.ReceiveItemEvent;
 import legend.core.GameEngine;
 import legend.game.SItem;
+import legend.game.i18n.I18n;
 import legend.game.inventory.Equipment;
 import legend.game.inventory.Good;
 import legend.game.inventory.GoodsSource;
 import legend.game.inventory.Item;
 import org.legendofdragoon.modloader.registries.RegistryId;
 
+import java.util.List;
+import java.util.Objects;
+
 import static archipelagoon.Archipelagoon.LAST_ITEM_INDEX;
+import static archipelagoon.Archipelagoon.MOD_ID;
 import static legend.game.Scus94491BpeSegment_800b.gameState_800babc8;
 
 public class ReceiveItemListener {
@@ -27,25 +32,37 @@ public class ReceiveItemListener {
       return;
     }
 
-    final long apItemId = event.getItemID();
-    final String itemId = Items.getRegistryIdFromAPItemId(apItemId);
-
-    final RegistryId registryId;
-    if(itemId != null) {
-      registryId = new RegistryId(itemId);
-    } else if(ctx.getProgressiveAdditionMatch(apItemId) != null) {
-      registryId = ctx.getProgressiveAdditionMatch(apItemId);
-    } else if(ctx.getProgressiveMagicMatch(apItemId) != null) {
-      registryId = ctx.getProgressiveMagicMatch(apItemId);
-    } else {
+    final RegistryId registryId = this.getProgressiveRegistryId(event.getItemID());
+    if(registryId == null) {
       // no match found, not supported.
       return;
     }
 
-    // update index
+    this.giveItem(registryId);
     GameEngine.CONFIG.setConfig(LAST_ITEM_INDEX.get(), event.getIndex());
 
-    // give to player
+    final String message = I18n.translate(MOD_ID + ".ap.event.item_received", event.getItemName(), event.getPlayerName());
+    ctx.displayMessage(message);
+  }
+
+  private RegistryId getProgressiveRegistryId(final long apItemId) {
+    final String itemId = Items.getRegistryIdFromAPItemId(apItemId);
+
+    final APContext ctx = APContext.getContext();
+    // This is the list of progressive maps we want to check against
+    final List<RegistryId> MATCHERS = List.of(ctx.getProgressiveAdditionMatch(apItemId), ctx.getProgressiveMagicMatch(apItemId), ctx.getProgressiveDartSpiritMatch(apItemId));
+
+    final RegistryId registryId;
+    if(itemId != null) {
+      registryId = new RegistryId(itemId);
+    } else {
+      registryId = MATCHERS.stream().filter(Objects::nonNull).findFirst().orElse(null);
+    }
+
+    return registryId;
+  }
+
+  private void giveItem(final RegistryId registryId) {
     if(GameEngine.REGISTRIES.items.hasEntry(registryId)) {
       final Item item = GameEngine.REGISTRIES.items.getEntry(registryId).get();
       gameState_800babc8.items_2e9.give(item);
@@ -60,9 +77,5 @@ public class ReceiveItemListener {
     } else if(GameEngine.REGISTRIES.spells.hasEntry(registryId)) {
       MagicManager.getInstance().setSpell(registryId, null);
     }
-
-    // queue message
-    final String message = String.format("Received\n%s\nfrom\n%s", event.getItemName(), event.getPlayerName());
-    ctx.displayMessage(message);
   }
 }

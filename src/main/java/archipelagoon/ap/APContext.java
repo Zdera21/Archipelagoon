@@ -7,6 +7,7 @@ import archipelagoon.ap.mapping.locations.DragoonLevels;
 import archipelagoon.ap.mapping.locations.Enemies;
 import archipelagoon.ap.mapping.locations.Locations;
 import archipelagoon.data.SlotData;
+import archipelagoon.data.tables.ProgressiveDartSpirit;
 import archipelagoon.randomizer.AdditionManager;
 import archipelagoon.randomizer.DeathlinkManager;
 import archipelagoon.randomizer.MagicManager;
@@ -21,6 +22,7 @@ import org.legendofdragoon.modloader.registries.RegistryId;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -200,6 +202,20 @@ public class APContext {
 
   public RegistryId getProgressiveMagicMatch(final long itemId) {
     return this.magicManager.getProgressiveMagicRegistryId(itemId);
+  }
+
+  public RegistryId getProgressiveDartSpiritMatch(final long itemId) {
+    final APContext ctx = APContext.getContext();
+    final List<Long> receivedItems = ctx.getReceivedItemIDs();
+
+    final int totalReceived = Collections.frequency(receivedItems, itemId);
+    final Map<Integer, RegistryId> spiritMap = ProgressiveDartSpirit.getStaticMap();
+
+    if(!spiritMap.containsKey(totalReceived)) {
+      return null;
+    }
+
+    return spiritMap.get(totalReceived);
   }
 
   public void enableDeathlink() {
