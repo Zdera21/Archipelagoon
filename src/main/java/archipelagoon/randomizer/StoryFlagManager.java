@@ -59,8 +59,9 @@ public final class StoryFlagManager {
           }
           break;
         case StoryFlags.FURNI_BOAT:
-          //TODO: GET SUBMAP VALUE FOR BOAT LICENSE
-          event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.BOAT_LICENSE.getId()));
+          if (current_submap == Submaps.FURNI_HOTEL) {
+            event.flagValue = gameState_800babc8.goods_19c.has(GameEngine.REGISTRIES.goods.getEntry(LodGoods.BOAT_LICENSE.getId()));
+          }
           break;
       }
     } else if(event.flagArray == ScriptFlagArrayEnum.FLAGS1) {
