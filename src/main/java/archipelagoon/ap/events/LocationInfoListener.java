@@ -9,7 +9,6 @@ import legend.core.GameEngine;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
 import static archipelagoon.Archipelagoon.LOCATION_STATE_REGISTRY;
@@ -18,17 +17,9 @@ public class LocationInfoListener {
   @ArchipelagoEventListener
   public void onLocationInfoEvent(final LocationInfoEvent event) {
     final List<LocationState> locationList = new ArrayList<>();
-    final List<LocationState> existingStates = GameEngine.CONFIG.getConfig(LOCATION_STATE_REGISTRY.get());
     final Set<Long> checkedLocations = APClient.client.getLocationManager().getCheckedLocations();
 
     for(final NetworkItem item : event.locations) {
-
-      if(!existingStates.isEmpty()) {
-        final List<LocationState> result = existingStates.stream()
-          .filter(a -> Objects.equals(a.getLocationID(), item.locationID))
-          .toList();
-      }
-
       final boolean applied = checkedLocations.contains(item.locationID);
       final LocationState locationState = new LocationState(item, applied);
       locationList.add(locationState);
