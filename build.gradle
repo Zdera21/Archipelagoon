@@ -26,7 +26,7 @@ dependencies {
 
   implementation files("mods/lloyd-mod-1.0-SNAPSHOT.jar")
 
-  bundled('io.github.archipelagomw:Java-Client:0.2.1') {
+  bundled('io.github.archipelagomw:Java-Client:0.2.2') {
     // These are already supplied by SC; retain the client's networking libraries.
     exclude group: 'com.google.code.gson', module: 'gson'
     exclude group: 'org.slf4j', module: 'slf4j-api'
