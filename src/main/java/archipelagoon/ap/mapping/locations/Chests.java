@@ -14,6 +14,11 @@ public final class Chests {
     final Map<Integer, Long> seles_chests = new LinkedHashMap<>();
     seles_chests.put(9, 108_40000L);
     CHEST_LOCATIONS.put(Submaps.SELES_FENCE_AREA, seles_chests);
+
+    final Map<Integer, Long> forest_chests = new LinkedHashMap<>();
+    forest_chests.put(4, 108_40001L);
+    forest_chests.put(14, 108_40001L);
+    CHEST_LOCATIONS.put(Submaps.FOREST_MERCHANT, forest_chests);
   }
 
   private Chests() {
