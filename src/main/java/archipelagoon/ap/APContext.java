@@ -7,9 +7,11 @@ import archipelagoon.ap.mapping.locations.DragoonLevels;
 import archipelagoon.ap.mapping.locations.Enemies;
 import archipelagoon.ap.mapping.locations.Locations;
 import archipelagoon.data.SlotData;
+import archipelagoon.data.enums.ChestType;
 import archipelagoon.data.tables.ProgressiveDartSpirit;
 import archipelagoon.randomizer.AdditionManager;
 import archipelagoon.randomizer.CharacterManager;
+import archipelagoon.randomizer.ChestManager;
 import archipelagoon.randomizer.DeathlinkManager;
 import archipelagoon.randomizer.MagicManager;
 import archipelagoon.randomizer.MessageManager;
@@ -43,6 +45,7 @@ public class APContext {
   private final MessageManager messageManager = MessageManager.getInstance();
   private final DeathlinkManager deathlinkManager = DeathlinkManager.getInstance();
   private final CharacterManager characterManager = CharacterManager.getInstance();
+  private final ChestManager chestManager = ChestManager.getInstance();
   private SlotData slotData;
 
   public APContext() {
@@ -263,5 +266,28 @@ public class APContext {
 
   public void enableDeathlink() {
     this.client.setDeathLinkEnabled(true);
+  }
+
+  public void handleChest(final ChestType _chestType) {
+    final boolean isFromChest = StackWalker
+      .getInstance(StackWalker.Option.RETAIN_CLASS_REFERENCE)
+      .walk(frames -> frames
+        .filter(frame ->
+          "scriptGiveChestContents".equals(frame.getMethodName())
+        )
+        .findFirst()
+      ).isPresent();
+
+    if(!isFromChest) {
+      return;
+    }
+
+    final Long locationId = this.chestManager.getChestId();
+
+    if(locationId == -1) {
+      return;
+    }
+
+    this.checkLocation(locationId);
   }
 }

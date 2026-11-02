@@ -13,6 +13,7 @@ import archipelagoon.config.XpMultiplierConfigEntry;
 import archipelagoon.data.APInventoryEntry;
 import archipelagoon.data.APShopExtension;
 import archipelagoon.data.SlotData;
+import archipelagoon.data.enums.ChestType;
 import archipelagoon.data.enums.Submaps;
 import archipelagoon.icons.APIconUiType;
 import archipelagoon.interfaces.LloydInterface;
@@ -50,7 +51,9 @@ import legend.game.modding.events.gamestate.GameLoadedEvent;
 import legend.game.modding.events.gamestate.NewGameEvent;
 import legend.game.modding.events.gamestate.PartyFlagsChangeEvent;
 import legend.game.modding.events.gamestate.PrimaryPartyChangeEvent;
+import legend.game.modding.events.inventory.GiveEquipmentEvent;
 import legend.game.modding.events.inventory.GiveGoodsEvent;
+import legend.game.modding.events.inventory.GiveItemEvent;
 import legend.game.modding.events.inventory.ScriptFlags1ChangedEvent;
 import legend.game.modding.events.inventory.ScriptFlags2ChangedEvent;
 import legend.game.modding.events.inventory.ShopBuyEvent;
@@ -436,6 +439,18 @@ public class Archipelagoon {
     event.gameState.items_2e9.give(APItems.ICE_TRAP.get().impersonate(LodItems.HEALING_BREEZE.get()));
   }
 */
+
+  @EventListener
+  public void giveItemListener(final GiveItemEvent event) {
+    final APContext ctx = APContext.getContext();
+    ctx.handleChest(ChestType.ITEM);
+  }
+
+  @EventListener
+  public void giveEquipmentListener(final GiveEquipmentEvent event) {
+    final APContext ctx = APContext.getContext();
+    ctx.handleChest(ChestType.EQUIPMENT);
+  }
 
   @EventListener
   public void partyFlagChangedListener(final PartyFlagsChangeEvent event) {

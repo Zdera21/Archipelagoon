@@ -1,4 +1,44 @@
 package archipelagoon.ap.mapping.locations;
 
-public class Chests {
+import archipelagoon.data.enums.Submaps;
+
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public final class Chests {
+  private static final Map<Integer, Map<Integer, Long>> CHEST_LOCATIONS = new LinkedHashMap<>();
+
+  static {
+    //    final Long BASE_ID = 108_40000L;
+    final Map<Integer, Long> seles_chests = new LinkedHashMap<>();
+    seles_chests.put(9, 108_40000L);
+    CHEST_LOCATIONS.put(Submaps.SELES_FENCE_AREA, seles_chests);
+  }
+
+  private Chests() {
+  }
+
+  public static Map<Integer, Map<Integer, Long>> getStaticMap() {
+    return Collections.unmodifiableMap(CHEST_LOCATIONS);
+  }
+
+  public static Map<Long, String> getStaticStringMap() {
+    final Map<Long, String> locationMap = new LinkedHashMap<>();
+    for(final Map.Entry<Integer, Map<Integer, Long>> areaInfo : CHEST_LOCATIONS.entrySet()) {
+      for(final Map.Entry<Integer, Long> chestInfo : areaInfo.getValue().entrySet()) {
+        locationMap.put(chestInfo.getValue(), String.valueOf(chestInfo.getKey()));
+      }
+    }
+
+    return Collections.unmodifiableMap(locationMap);
+  }
+
+  public static Long getAPLocationId(final int submap, final int collisionIndex) {
+    try {
+      return getStaticMap().get(submap).getOrDefault(collisionIndex, -1L);
+    } catch(final Exception e) {
+      return -1L;
+    }
+  }
 }

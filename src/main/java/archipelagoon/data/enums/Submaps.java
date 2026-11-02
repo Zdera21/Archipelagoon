@@ -1,6 +1,11 @@
 package archipelagoon.data.enums;
 
+/**
+ * A list of submaps.
+ * schema is LOCATION_DESCRIPTION
+ */
 public final class Submaps {
+  public static final int SELES_FENCE_AREA = 10;
   public static final int HELLENA_PRISON_KEY_ROOM = 31;
   public static final int HELLENA_ELEVATOR = 20;
   public static final int PRAIRIE_SHACK_INSIDE = 41;
@@ -11,7 +16,7 @@ public final class Submaps {
   public static final int FURNI_HOTEL = 334;
   public static final int FOREST_MERCHANT = 624;
   public static final int HOAX_INVASION = 674;
-  public static final int POST_HOAX_INVASION = 693;
+  public static final int HOAX_POST_INVASION = 693;
   public static final int LOHAN_MERCHANT = 141;
   public static final int BALE_BAR = 219;
   public static final int HOME_OF_GIGANTO_GEHRICH_ROOM = 265;
