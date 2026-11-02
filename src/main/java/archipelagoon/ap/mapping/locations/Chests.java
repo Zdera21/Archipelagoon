@@ -1,6 +1,7 @@
 package archipelagoon.ap.mapping.locations;
 
 import archipelagoon.data.enums.Submaps;
+import archipelagoon.data.tables.ChestData;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -11,14 +12,8 @@ public final class Chests {
 
   static {
     //    final Long BASE_ID = 108_40000L;
-    final Map<Integer, Long> seles_chests = new LinkedHashMap<>();
-    seles_chests.put(9, 108_40000L);
-    CHEST_LOCATIONS.put(Submaps.SELES_FENCE_AREA, seles_chests);
-
-    final Map<Integer, Long> forest_chests = new LinkedHashMap<>();
-    forest_chests.put(4, 108_40001L);
-    forest_chests.put(14, 108_40001L);
-    CHEST_LOCATIONS.put(Submaps.FOREST_MERCHANT, forest_chests);
+    CHEST_LOCATIONS.put(Submaps.SELES_FENCE_AREA, ChestData.seles_chests);
+    CHEST_LOCATIONS.put(Submaps.FOREST_MERCHANT, ChestData.forest_chests);
   }
 
   private Chests() {
