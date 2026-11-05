@@ -13,7 +13,10 @@ public final class Chests {
   static {
     //    final Long BASE_ID = 108_40000L;
     CHEST_LOCATIONS.put(Submaps.SELES_FENCE_AREA, ChestData.seles_chests);
-    CHEST_LOCATIONS.put(Submaps.FOREST_MERCHANT, ChestData.forest_chests);
+    CHEST_LOCATIONS.put(Submaps.FOREST_MERCHANT, ChestData.forest_merchant_chests);
+    CHEST_LOCATIONS.put(Submaps.FOREST_TREE_BRIDGE, ChestData.forest_tree_bridge_chests);
+    CHEST_LOCATIONS.put(Submaps.FOREST_MAZE, ChestData.forest_maze_chests);
+    CHEST_LOCATIONS.put(Submaps.HELLENA_PRISON_NORTHWEST_ENTRANCE, ChestData.forest_maze_chests);
   }
 
   private Chests() {
