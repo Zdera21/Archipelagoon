@@ -9,8 +9,15 @@ public final class Submaps {
   public static final int HELLENA_PRISON_NORTHWEST_ENTRANCE = 19;
   public static final int HELLENA_PRISON_KEY_ROOM = 31;
   public static final int HELLENA_ELEVATOR = 20;
+  public static final int HELLENA_BARRACKS_ELEVATOR = 21;
+  public static final int HELLENA_JUMP_PUZZLE = 641;
+  public static final int HELLENA_TINY_CELL = 642;
+  public static final int HELLENA_SHANA_EAST_CELL = 645;
+  public static final int HELLENA_SHANA_WEST_CELL = 644;
+  public static final int PRAIRIE_SHACK_OUTSIDE = 40;
   public static final int PRAIRIE_SHACK_INSIDE = 41;
   public static final int PRAIRIE_CLIFF_TREE = 42;
+  public static final int PRAIRIE_OUTSIDE_OF_CAVE = 44;
   public static final int NEST_OF_DRAGON_LIFE_WATER = 134;
   public static final int NEST_OF_DRAGON_PLANT = 132;
   public static final int NEST_OF_DRAGON_GREHAM_ROOM = 656;

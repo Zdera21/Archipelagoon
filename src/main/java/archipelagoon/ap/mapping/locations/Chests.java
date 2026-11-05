@@ -16,7 +16,15 @@ public final class Chests {
     CHEST_LOCATIONS.put(Submaps.FOREST_MERCHANT, ChestData.forest_merchant_chests);
     CHEST_LOCATIONS.put(Submaps.FOREST_TREE_BRIDGE, ChestData.forest_tree_bridge_chests);
     CHEST_LOCATIONS.put(Submaps.FOREST_MAZE, ChestData.forest_maze_chests);
-    CHEST_LOCATIONS.put(Submaps.HELLENA_PRISON_NORTHWEST_ENTRANCE, ChestData.forest_maze_chests);
+    CHEST_LOCATIONS.put(Submaps.HELLENA_PRISON_NORTHWEST_ENTRANCE, ChestData.hellena_01_nw_entrance_chests);
+    CHEST_LOCATIONS.put(Submaps.HELLENA_BARRACKS_ELEVATOR, ChestData.hellena_barracks_chests);
+    CHEST_LOCATIONS.put(Submaps.HELLENA_JUMP_PUZZLE, ChestData.hellena_jump_puzzle_chests);
+    CHEST_LOCATIONS.put(Submaps.HELLENA_TINY_CELL, ChestData.hellena_tiny_cell_chests);
+    CHEST_LOCATIONS.put(Submaps.HELLENA_SHANA_EAST_CELL, ChestData.hellena_shana_tower_east_chests);
+    CHEST_LOCATIONS.put(Submaps.HELLENA_SHANA_WEST_CELL, ChestData.hellena_shana_tower_west_chests);
+    CHEST_LOCATIONS.put(Submaps.PRAIRIE_SHACK_OUTSIDE, ChestData.prairie_shack_chests);
+    //    CHEST_LOCATIONS.put(Submaps.PRAIRIE_UNKNOWN, ChestData.prairie_rock_arch_chests); // not sure where this is? not accessible right after hellena
+    CHEST_LOCATIONS.put(Submaps.PRAIRIE_OUTSIDE_OF_CAVE, ChestData.prairie_before_cave);
   }
 
   private Chests() {
