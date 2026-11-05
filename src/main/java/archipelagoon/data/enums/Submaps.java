@@ -14,6 +14,7 @@ public final class Submaps {
   public static final int HELLENA_TINY_CELL = 642;
   public static final int HELLENA_SHANA_EAST_CELL = 645;
   public static final int HELLENA_SHANA_WEST_CELL = 644;
+  public static final int PRAIRIE_COAST_BEFORE_TREE = 38;
   public static final int PRAIRIE_SHACK_OUTSIDE = 40;
   public static final int PRAIRIE_SHACK_INSIDE = 41;
   public static final int PRAIRIE_CLIFF_TREE = 42;

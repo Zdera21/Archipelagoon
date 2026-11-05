@@ -23,7 +23,7 @@ public final class Chests {
     CHEST_LOCATIONS.put(Submaps.HELLENA_SHANA_EAST_CELL, ChestData.hellena_shana_tower_east_chests);
     CHEST_LOCATIONS.put(Submaps.HELLENA_SHANA_WEST_CELL, ChestData.hellena_shana_tower_west_chests);
     CHEST_LOCATIONS.put(Submaps.PRAIRIE_SHACK_OUTSIDE, ChestData.prairie_shack_chests);
-    //    CHEST_LOCATIONS.put(Submaps.PRAIRIE_UNKNOWN, ChestData.prairie_rock_arch_chests); // not sure where this is? not accessible right after hellena
+    CHEST_LOCATIONS.put(Submaps.PRAIRIE_COAST_BEFORE_TREE, ChestData.prairie_rock_arch_chests);
     CHEST_LOCATIONS.put(Submaps.PRAIRIE_OUTSIDE_OF_CAVE, ChestData.prairie_before_cave);
   }
 
