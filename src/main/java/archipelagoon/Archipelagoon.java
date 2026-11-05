@@ -70,6 +70,7 @@ import legend.game.saves.ConfigPresetEntry;
 import legend.game.saves.ConfigRegistryEvent;
 import legend.game.saves.ConfigStorageLocation;
 import legend.game.saves.StringConfigEntry;
+import legend.game.scripting.ScriptLifecycleEvent;
 import legend.lodmod.LodEncounters;
 import legend.lodmod.LodGoods;
 import org.apache.logging.log4j.LogManager;
@@ -104,6 +105,7 @@ import static legend.game.modding.coremod.CoreMod.SAVE_ANYWHERE_CONFIG;
 import static legend.game.modding.coremod.CoreMod.SECONDARY_CHARACTER_XP_MULTIPLIER_CONFIG;
 import static legend.game.modding.coremod.CoreMod.TRANSFORMATION_MODE_CONFIG;
 import static legend.game.modding.coremod.CoreMod.UNLOCK_PARTY_CONFIG;
+import static legend.game.scripting.ScriptLifecycleEvent.Lifecycle.PRE_SCRIPT_VM_TICK;
 import static legend.lodmod.LodConfig.EXTENDED_DRAGOON_ACTIONS;
 import static legend.lodmod.LodConfig.ITEM_STACK_SIZE;
 
@@ -421,6 +423,16 @@ public class Archipelagoon {
   @EventListener
   public void submapWarpListener(final SubmapWarpEvent event) {
     StoryFlagManager.submapWarpListener(event);
+  }
+
+  @EventListener
+  public void scriptLifecycleListener(final ScriptLifecycleEvent event) {
+    if(event.getLifecycle() != PRE_SCRIPT_VM_TICK) {
+      return;
+    }
+
+    final APContext ctx = APContext.getContext();
+    ctx.storeObjectIndex(event.scriptIndex);
   }
 
   @EventListener

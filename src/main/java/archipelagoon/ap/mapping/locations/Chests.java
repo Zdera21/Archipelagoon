@@ -45,9 +45,9 @@ public final class Chests {
     return Collections.unmodifiableMap(locationMap);
   }
 
-  public static Long getAPLocationId(final int submap, final int collisionIndex) {
+  public static Long getAPLocationId(final int submap, final int objectIndex) {
     try {
-      return getStaticMap().get(submap).getOrDefault(collisionIndex, -1L);
+      return getStaticMap().get(submap).getOrDefault(objectIndex, -1L);
     } catch(final Exception e) {
       return -1L;
     }

@@ -290,4 +290,8 @@ public class APContext {
 
     this.checkLocation(locationId);
   }
+
+  public void storeObjectIndex(int scriptIndex) {
+    this.chestManager.updateObjectIndex(scriptIndex);
+  }
 }
