@@ -25,6 +25,28 @@ public final class Chests {
     CHEST_LOCATIONS.put(Submaps.PRAIRIE_SHACK_OUTSIDE, ChestData.prairie_shack_chests);
     CHEST_LOCATIONS.put(Submaps.PRAIRIE_COAST_BEFORE_TREE, ChestData.prairie_rock_arch_chests);
     CHEST_LOCATIONS.put(Submaps.PRAIRIE_OUTSIDE_OF_CAVE, ChestData.prairie_before_cave);
+    CHEST_LOCATIONS.put(Submaps.BARRENS_FLETZ_EXIT, ChestData.barrens_fletz_exit_chests);
+    CHEST_LOCATIONS.put(Submaps.BARRENS_DONAU_EXIT, ChestData.barrens_donau_exit_chests);
+    CHEST_LOCATIONS.put(Submaps.VALLEY_OF_CORRUPTED_GRAVITY_FIREFLIES, ChestData.valley_area1_chests);
+    CHEST_LOCATIONS.put(Submaps.VALLEY_OF_CORRUPTED_GRAVITY_FIRST_ROCKS, ChestData.valley_area2_chests);
+    CHEST_LOCATIONS.put(Submaps.VALLEY_OF_CORRUPTED_GRAVITY_SAVE_ROOM, ChestData.valley_area4_chests);
+    CHEST_LOCATIONS.put(Submaps.HOME_OF_GIGANTO_ENTRANCE, ChestData.gigantos_entrance_chests);
+    CHEST_LOCATIONS.put(Submaps.HOME_OF_GIGANTO_SWITCH, ChestData.gigantos_switch_room_chests);
+    CHEST_LOCATIONS.put(Submaps.HOME_OF_GIGANTO_SAVE_ROOM, ChestData.gigantos_save_room_chests);
+    CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_BOGY_ROOM, ChestData.phantom_ship_bogy_room_chests);
+    CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_HALLWAY, ChestData.phantom_ship_hallway_chests);
+    CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_PASSWORD_ROOM, ChestData.phantom_ship_password_chests);
+    CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_CAPTAIN_ROOM, ChestData.phantom_ship_captain_chests);
+    CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_PUZZLE, ChestData.phantom_ship_password_chests);
+    CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_LOCKED_ROOM, ChestData.phantom_ship_locked_room_chests);
+    CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_CRADLE, ChestData.phantom_ship_cradle_chests);
+    CHEST_LOCATIONS.put(Submaps.LIDIERA_OUTSIDE, ChestData.lidiera_outside_chests);
+    CHEST_LOCATIONS.put(Submaps.LIDIERA_CAVE, ChestData.lidiera_cave_chests);
+    CHEST_LOCATIONS.put(Submaps.UNDERSEA_CAVE_BRIDGE, ChestData.undersea_cave_bridge_chests);
+    CHEST_LOCATIONS.put(Submaps.UNDERSEA_CAVE_SECOND_ROOM, ChestData.undersea_cave_middle_chests);
+    CHEST_LOCATIONS.put(Submaps.UNDERSEA_CAVE_WEST_ROOM, ChestData.undersea_cave_left_chests);
+    CHEST_LOCATIONS.put(Submaps.UNDERSEA_CAVE_SAVE_ROOM, ChestData.undersea_cave_save_room_chests);
+    CHEST_LOCATIONS.put(Submaps.FLETZ_TRAINING_ROOM, ChestData.fletz_training_chests);
   }
 
   private Chests() {

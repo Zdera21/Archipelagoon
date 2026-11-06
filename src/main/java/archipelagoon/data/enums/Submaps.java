@@ -30,8 +30,30 @@ public final class Submaps {
   public static final int HOAX_POST_INVASION = 693;
   public static final int LOHAN_MERCHANT = 141;
   public static final int BALE_BAR = 219;
+  public static final int BARRENS_FLETZ_EXIT = 231;
+  public static final int BARRENS_DONAU_EXIT = 233;
+  public static final int HOME_OF_GIGANTO_ENTRANCE = 261;
+  public static final int HOME_OF_GIGANTO_SWITCH = 262;
+  public static final int HOME_OF_GIGANTO_SAVE_ROOM = 264;
   public static final int HOME_OF_GIGANTO_GEHRICH_ROOM = 265;
   public static final int VALLEY_OF_CORRUPTED_GRAVITY_POST_VIRAGE = 256;
+  public static final int VALLEY_OF_CORRUPTED_GRAVITY_FIREFLIES = 252;
+  public static final int VALLEY_OF_CORRUPTED_GRAVITY_FIRST_ROCKS = 253;
+  public static final int VALLEY_OF_CORRUPTED_GRAVITY_SAVE_ROOM = 255;
+  public static final int PHANTOM_SHIP_BOGY_ROOM = 292;
+  public static final int PHANTOM_SHIP_HALLWAY = 291;
+  public static final int PHANTOM_SHIP_PASSWORD_ROOM = 293;
+  public static final int PHANTOM_SHIP_CAPTAIN_ROOM = 290;
+  public static final int PHANTOM_SHIP_PUZZLE = 289;
+  public static final int PHANTOM_SHIP_LOCKED_ROOM = 294;
+  public static final int PHANTOM_SHIP_CRADLE = 295;
+  public static final int LIDIERA_OUTSIDE = 297;
+  public static final int LIDIERA_CAVE = 630;
+  public static final int UNDERSEA_CAVE_BRIDGE = 302;
+  public static final int UNDERSEA_CAVE_SECOND_ROOM = 303;
+  public static final int UNDERSEA_CAVE_WEST_ROOM = 304;
+  public static final int UNDERSEA_CAVE_SAVE_ROOM = 305;
+  public static final int FLETZ_TRAINING_ROOM = 225;
 
   private Submaps() {
   }
