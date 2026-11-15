@@ -475,6 +475,7 @@ public class Archipelagoon {
       switch(StoryFlagManager.getCurrentSubmap()) {
         case Submaps.VALLEY_OF_CORRUPTED_GRAVITY_POST_VIRAGE:
         case Submaps.HOME_OF_GIGANTO_GEHRICH_ROOM:
+        case Submaps.HOME_OF_GIGANTO_BELOW_THRONE:
           break;
         default:
           event.characterIndex = event.gameState.charIds_88.getInt(event.activePartySlot);
