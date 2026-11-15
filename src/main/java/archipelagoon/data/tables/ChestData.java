@@ -297,15 +297,15 @@ public final class ChestData {
 
     shrine_of_shirley_apex_chests.put(2, 108_40071L);
 
-    shrine_of_shirley_treasure_chests.put(1, 108_40072L);
-    shrine_of_shirley_treasure_chests.put(2, 108_40073L);
-    shrine_of_shirley_treasure_chests.put(3, 108_40074L);
-    shrine_of_shirley_treasure_chests.put(4, 108_40075L);
-    shrine_of_shirley_treasure_chests.put(5, 108_40076L);
-    shrine_of_shirley_treasure_chests.put(6, 108_40077L);
-    shrine_of_shirley_treasure_chests.put(7, 108_40078L);
-    shrine_of_shirley_treasure_chests.put(8, 108_40079L);
-    shrine_of_shirley_treasure_chests.put(9, 108_40080L);
+    shrine_of_shirley_treasure_chests.put(8, 108_40072L);
+    shrine_of_shirley_treasure_chests.put(9, 108_40073L);
+    shrine_of_shirley_treasure_chests.put(7, 108_40074L);
+    shrine_of_shirley_treasure_chests.put(3, 108_40075L);
+    shrine_of_shirley_treasure_chests.put(1, 108_40076L);
+    shrine_of_shirley_treasure_chests.put(2, 108_40077L);
+    shrine_of_shirley_treasure_chests.put(6, 108_40078L);
+    shrine_of_shirley_treasure_chests.put(4, 108_40079L);
+    shrine_of_shirley_treasure_chests.put(5, 108_40080L);
 
     hellena_ladder_chests.put(3, 108_40082L);
 
@@ -420,7 +420,7 @@ public final class ChestData {
 
     crystal_palace_entrance_chests.put(7, 108_40150L);
 
-    crystal_palace_interior_chests.put(6, 108_40151L);
+    crystal_palace_interior_chests.put(1, 108_40151L);
 
     forbidden_land_steam_vent_chests.put(6, 108_40152L);
 
@@ -502,7 +502,7 @@ public final class ChestData {
 
     death_frontier_maze2_south_east_chests.put(9, 108_40200L);
 
-    death_frontier_maze2_left_chests.put(9, 108_40201L);
+    death_frontier_maze2_left_chests.put(5, 108_40201L);
 
     death_frontier_maze2_cave_back_chests.put(4, 108_40204L);
 
