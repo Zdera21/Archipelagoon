@@ -254,8 +254,8 @@ public final class ChestData {
     marshland_outside_fort_chests.put(9, 108_40048L);
 
     marshland_fort_chests.put(9, 108_40045L);
-    marshland_fort_chests.put(11,108_40046L);
-    marshland_fort_chests.put(10,108_40047L);
+    marshland_fort_chests.put(11, 108_40046L);
+    marshland_fort_chests.put(10, 108_40047L);
 
     marshland_east_swamp_chests.put(9, 108_40049L);
     marshland_east_swamp_chests.put(10, 108_40050L);
@@ -343,7 +343,7 @@ public final class ChestData {
     black_castle_magi_chests.put(7, 108_40102L);
 
     black_castle_elevator_chests.put(8, 108_40103L);
-    black_castle_elevator_chests.put(4, 108_40104L);
+    black_castle_elevator_chests.put(7, 108_40104L);
 
     black_castle_workers_chests.put(4, 108_40105L);
     black_castle_workers_chests.put(3, 108_40106L);
