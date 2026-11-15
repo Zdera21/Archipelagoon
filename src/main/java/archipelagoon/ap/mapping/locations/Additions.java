@@ -4,9 +4,12 @@ import legend.lodmod.LodAdditions;
 import org.legendofdragoon.modloader.registries.RegistryId;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 
 public final class Additions {
   private static final Map<RegistryId, Long> ADDITION_LOCATIONS = new LinkedHashMap<>();
@@ -131,19 +134,14 @@ public final class Additions {
     return Collections.unmodifiableMap(ADDITION_LOCATIONS);
   }
 
-  public static Map<Long, String> getStaticFlatMap() {
-    final Map<Long, String> locationMap = new LinkedHashMap<>();
-    for(final Map.Entry<RegistryId, Long> additionInfo : ADDITION_LOCATIONS.entrySet()) {
-      locationMap.put(additionInfo.getValue(), additionInfo.getKey().toString());
-    }
+  public static Set<Long> getStaticFlatMap() {
+    final LinkedHashSet<Long> locationSet = new LinkedHashSet<>(ADDITION_LOCATIONS.values());
 
     for(final Map.Entry<RegistryId, Long[]> additionLevelInfo : ADDITION_LEVEL_LOCATIONS.entrySet()) {
-      for(final long levelLocationId : additionLevelInfo.getValue()) {
-        locationMap.put(levelLocationId, additionLevelInfo.getKey().toString());
-      }
+      locationSet.addAll(Arrays.asList(additionLevelInfo.getValue()));
     }
 
-    return Collections.unmodifiableMap(locationMap);
+    return Collections.unmodifiableSet(new LinkedHashSet<>(locationSet));
   }
 
   public static Long getAPLocationId(final RegistryId additionId) {

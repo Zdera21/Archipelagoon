@@ -5,7 +5,9 @@ import org.legendofdragoon.modloader.registries.RegistryId;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 
 public final class GoodsLocations {
   private static final Map<RegistryId, Long> GOOD_LOCATIONS = new LinkedHashMap<>();
@@ -53,11 +55,9 @@ public final class GoodsLocations {
     return getStaticMap().getOrDefault(registryId, -1L);
   }
 
-  public static Map<Long, String> getStaticStringMap() {
-    final Map<Long, String> locationMap = new LinkedHashMap<>();
-    for(final Map.Entry<RegistryId, Long> goodInfo : GOOD_LOCATIONS.entrySet()) {
-      locationMap.put(goodInfo.getValue(), String.valueOf(goodInfo.getKey()));
-    }
-    return locationMap;
+  public static Set<Long> getStaticFlatMap() {
+
+    final LinkedHashSet<Long> locationSet = new LinkedHashSet<>(GOOD_LOCATIONS.values());
+    return Collections.unmodifiableSet(locationSet);
   }
 }

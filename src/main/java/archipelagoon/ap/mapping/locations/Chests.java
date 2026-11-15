@@ -5,7 +5,9 @@ import archipelagoon.data.tables.ChestData;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 
 public final class Chests {
   private static final Map<Integer, Map<Integer, Long>> CHEST_LOCATIONS = new LinkedHashMap<>();
@@ -187,15 +189,13 @@ public final class Chests {
     return Collections.unmodifiableMap(CHEST_LOCATIONS);
   }
 
-  public static Map<Long, String> getStaticStringMap() {
-    final Map<Long, String> locationMap = new LinkedHashMap<>();
+  public static Set<Long> getStaticFlatMap() {
+    final LinkedHashSet<Long> locationMap = new LinkedHashSet<>();
     for(final Map.Entry<Integer, Map<Integer, Long>> areaInfo : CHEST_LOCATIONS.entrySet()) {
-      for(final Map.Entry<Integer, Long> chestInfo : areaInfo.getValue().entrySet()) {
-        locationMap.put(chestInfo.getValue(), String.valueOf(chestInfo.getKey()));
-      }
+      locationMap.addAll(areaInfo.getValue().values());
     }
 
-    return Collections.unmodifiableMap(locationMap);
+    return Collections.unmodifiableSet(locationMap);
   }
 
   public static Long getAPLocationId(final int submap, final int objectIndex) {
