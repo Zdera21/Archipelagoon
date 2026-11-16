@@ -381,7 +381,7 @@ public final class ChestData {
     phantom_ship_captain_chests.put(9, 108_40125L);
     phantom_ship_captain_chests.put(8, 108_40126L);
 
-    phantom_ship_puzzle_chests.put(1, 108_40127L); /*
+    phantom_ship_puzzle_chests.put(6, 108_40127L); /*
     phantom_ship_puzzle_chests.put(1, 108_40128L)
     phantom_ship_puzzle_chests.put(1, 108_40129L)  puzzle chest levels
     phantom_ship_puzzle_chests.put(1, 108_40130L)

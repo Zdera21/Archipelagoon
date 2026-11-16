@@ -93,7 +93,7 @@ public final class Chests {
     CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_HALLWAY, ChestData.phantom_ship_hallway_chests);
     CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_PASSWORD_ROOM, ChestData.phantom_ship_password_chests);
     CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_CAPTAIN_ROOM, ChestData.phantom_ship_captain_chests);
-    CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_PUZZLE, ChestData.phantom_ship_password_chests);
+    CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_PUZZLE, ChestData.phantom_ship_puzzle_chests);
     CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_LOCKED_ROOM, ChestData.phantom_ship_locked_room_chests);
     CHEST_LOCATIONS.put(Submaps.PHANTOM_SHIP_CRADLE, ChestData.phantom_ship_cradle_chests);
     CHEST_LOCATIONS.put(Submaps.LIDIERA_OUTSIDE, ChestData.lidiera_outside_chests);
