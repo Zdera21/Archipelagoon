@@ -3,7 +3,6 @@ package archipelagoon.ap.mapping.locations;
 import legend.lodmod.LodCharacterTemplates;
 import org.legendofdragoon.modloader.registries.RegistryId;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -76,6 +75,13 @@ public final class DragoonLevels {
     miranda_spells.put(4, 108_90083L);
     miranda_spells.put(5, 108_90084L);
     CHARACTER_MAGIC_LOCATIONS.put(LodCharacterTemplates.MIRANDA.getId(), miranda_spells);
+
+    final Map<Integer, Long> lloyd_spells = new LinkedHashMap<>();
+    lloyd_spells.put(2, 108_90091L);
+    lloyd_spells.put(3, 108_90092L);
+    lloyd_spells.put(4, 108_90093L);
+    lloyd_spells.put(5, 108_90094L);
+    CHARACTER_MAGIC_LOCATIONS.put(new RegistryId("lloyd_mod", "lloyd"), lloyd_spells);
   }
 
   private DragoonLevels() {
@@ -83,18 +89,6 @@ public final class DragoonLevels {
 
   public static Map<RegistryId, Map<Integer, Long>> getStaticMap() {
     return Collections.unmodifiableMap(CHARACTER_MAGIC_LOCATIONS);
-  }
-
-  public static ArrayList<Long> getAllLocationIds() {
-    // create array of longs
-    final ArrayList<Long> locations = new ArrayList<>();
-
-    // iterate through magic locations and add each value to the array above
-    CHARACTER_MAGIC_LOCATIONS.forEach((id, location) -> {
-      locations.addAll(location.values());
-    });
-
-    return locations;
   }
 
   public static Long getLocationId(final RegistryId charId, final int level) {
