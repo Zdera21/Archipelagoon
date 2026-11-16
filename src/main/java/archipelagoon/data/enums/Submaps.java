@@ -89,6 +89,7 @@ public final class Submaps {
   public static final int HOME_OF_GIGANTO_SWITCH = 262;
   public static final int HOME_OF_GIGANTO_SAVE_ROOM = 264;
   public static final int HOME_OF_GIGANTO_GEHRICH_ROOM = 265;
+  public static final int HOME_OF_GIGANTO_BELOW_THRONE = 267;
   public static final int VALLEY_OF_CORRUPTED_GRAVITY_POST_VIRAGE = 256;
   public static final int VALLEY_OF_CORRUPTED_GRAVITY_FIREFLIES = 252;
   public static final int VALLEY_OF_CORRUPTED_GRAVITY_FIRST_ROCKS = 253;

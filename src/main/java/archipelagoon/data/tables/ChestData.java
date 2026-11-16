@@ -254,8 +254,8 @@ public final class ChestData {
     marshland_outside_fort_chests.put(9, 108_40048L);
 
     marshland_fort_chests.put(9, 108_40045L);
-    marshland_fort_chests.put(11,108_40046L);
-    marshland_fort_chests.put(10,108_40047L);
+    marshland_fort_chests.put(11, 108_40046L);
+    marshland_fort_chests.put(10, 108_40047L);
 
     marshland_east_swamp_chests.put(9, 108_40049L);
     marshland_east_swamp_chests.put(10, 108_40050L);

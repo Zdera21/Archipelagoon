@@ -8,8 +8,10 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public final class Shops {
   private static final Map<RegistryId, Map<Integer, Long>> PERMA_SHOP_LOCATIONS = new LinkedHashMap<>();
@@ -118,18 +120,16 @@ public final class Shops {
     return slots.get(slotIndex);
   }
 
-  public static boolean isPermanentShop(RegistryId shopId) {
+  public static boolean isPermanentShop(final RegistryId shopId) {
     return PERMA_SHOP_LOCATIONS.containsKey(shopId);
   }
 
-  public static Map<Long, String> getStaticFlatMap() {
-    final Map<Long, String> locationMap = new LinkedHashMap<>();
+  public static Set<Long> getStaticFlatMap() {
+    final LinkedHashSet<Long> locationSet = new LinkedHashSet<>();
     for(final Map.Entry<RegistryId, Map<Integer, Long>> shopInfo : SHOP_LOCATIONS.entrySet()) {
-      for(final Map.Entry<Integer, Long> slotInfo : shopInfo.getValue().entrySet()) {
-        locationMap.put(slotInfo.getValue(), shopInfo.getKey().toString());
-      }
+      locationSet.addAll(shopInfo.getValue().values());
     }
 
-    return Collections.unmodifiableMap(locationMap);
+    return Collections.unmodifiableSet(locationSet);
   }
 }

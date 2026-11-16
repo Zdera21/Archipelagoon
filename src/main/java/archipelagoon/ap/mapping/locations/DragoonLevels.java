@@ -6,7 +6,9 @@ import org.legendofdragoon.modloader.registries.RegistryId;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 
 public final class DragoonLevels {
   private static final Map<RegistryId, Map<Integer, Long>> CHARACTER_MAGIC_LOCATIONS = new LinkedHashMap<>();
@@ -103,14 +105,12 @@ public final class DragoonLevels {
     }
   }
 
-  public static Map<Long, String> getStaticFlatMap() {
-    final Map<Long, String> locationMap = new LinkedHashMap<>();
+  public static Set<Long> getStaticFlatMap() {
+    final LinkedHashSet<Long> locationSet = new LinkedHashSet<>();
     for(final Map.Entry<RegistryId, Map<Integer, Long>> magicInfo : CHARACTER_MAGIC_LOCATIONS.entrySet()) {
-      for(final Map.Entry<Integer, Long> slotInfo : magicInfo.getValue().entrySet()) {
-        locationMap.put(slotInfo.getValue(), String.valueOf(magicInfo.getKey()));
-      }
+      locationSet.addAll(magicInfo.getValue().values());
     }
 
-    return Collections.unmodifiableMap(locationMap);
+    return Collections.unmodifiableSet(locationSet);
   }
 }
